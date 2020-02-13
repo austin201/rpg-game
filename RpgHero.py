@@ -1,7 +1,7 @@
 from Armor1_2 import *
 import random
 import time
-
+#
 class Hero(object):
     racelist = ["Human", "Elf", "Dwarf", "Dog", ]
     classlist = ["Warrior", "Mage", "Hunter", "Dog"]
