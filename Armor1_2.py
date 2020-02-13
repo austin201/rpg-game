@@ -1,5 +1,5 @@
 import random
-#
+
 
 class Equipment(object):
     RARITY = ["Garbage","Useless","Better","Great","Amazing"]

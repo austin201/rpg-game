@@ -15,21 +15,28 @@ players = []
 for i in range(2):
     print("Create player", i + 1)
     player = Hero()
-    player.popInv()
+    player.equipAll()
     players.append(player)
 
-for i in players:
+
 
 turn = 0
 notturn = 1
 while players[0].alive:
+    print()
+    print("It's your attack")
+    print(players[turn])
     x = players[turn].attack()
     players[notturn].defend(x)
     if players[1].alive:
         xp, item = players[1].die()
+        players[0].addxp(xp)
+        players[0].addToInv()
+        players[0].equipAll()
+        print("A new challenger approaches")
+        time.sleep(3)
         player = Hero()
         players[1] = player
-    players[turn].addxp(xp)
-    players[turn].addToInv(item)
-    turn, notturn = switchturns(turn)
 
+    turn, notturn = switchturns(turn)
+print(players[0].name,"has died")

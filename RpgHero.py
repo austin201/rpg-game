@@ -169,7 +169,10 @@ class Hero(object):
         print(item)
         # winner.giveitem(item)
     def addxp(self, xp):
-        print("Picked up" + )
+        print("Picked up" + str(xp)+" xp")
+        self.xp += xp
+        if self.xp >= self.levelup:
+            self.levelUp()
     def __str__(self):
         return """
        Name: {}  \tRace: {}\tClass: {}  \tLevel: {}
